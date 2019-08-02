@@ -1,6 +1,0 @@
-# ninja log v5
-0	205	1564732850	CMakeFiles/native-lib.dir/native-lib.cpp.o	4070a1146708508b
-206	434	1564732850	/Users/heshiqi/study/videoeditor/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	3bc5022cf811c8c3
-2	74	1564734805	build.ninja	30ae2bfd37513b91
-19	398	1564734806	CMakeFiles/native-lib.dir/native-lib.cpp.o	f543d849d857b6dc
-398	564	1564734806	/Users/heshiqi/study/videoeditor/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	6222e33d3d376ffc

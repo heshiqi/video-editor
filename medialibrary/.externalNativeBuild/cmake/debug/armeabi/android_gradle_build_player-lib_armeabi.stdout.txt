@@ -1,2 +1,0 @@
-[1/2] Building CXX object CMakeFiles/player-lib.dir/src/main/cpp/videoeditor/videoEditor.cpp.o
-[2/2] Linking CXX shared library ../../../../build/intermediates/cmake/debug/obj/armeabi/libplayer-lib.so

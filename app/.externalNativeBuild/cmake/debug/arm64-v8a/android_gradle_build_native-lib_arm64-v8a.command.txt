@@ -1,8 +1,0 @@
-Executable : /Users/heshiqi/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake
-arguments : 
---build
-/Users/heshiqi/study/videoeditor/app/.externalNativeBuild/cmake/debug/arm64-v8a
---target
-native-lib
-jvmArgs : 
-
