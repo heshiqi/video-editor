@@ -136,15 +136,17 @@ Java_com_h_arrow_medialib_videoeditor_VideoEditor_extractAudio(JNIEnv *env, jobj
         AVFormatContext *ofmt_ctx;
         AVStream *in_stream = ifmt_ctx->streams[i];
         AVStream *out_stream = NULL;
-
+        AVCodec *inCodec = NULL;
         // 根据音视频类型，根据输入流创建输出流
-        if (ifmt_ctx->streams[i]->codec->codec_type == AVMEDIA_TYPE_VIDEO) {
+        if (ifmt_ctx->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_VIDEO) {
             videoindex = i;
-            out_stream = avformat_new_stream(ofmt_ctx_video, in_stream->codec->codec);
+            inCodec = avcodec_find_decoder(in_stream->codecpar->codec_id);
+            out_stream = avformat_new_stream(ofmt_ctx_video, inCodec);
             ofmt_ctx = ofmt_ctx_video;
-        } else if (ifmt_ctx->streams[i]->codec->codec_type == AVMEDIA_TYPE_AUDIO) {
+        } else if (ifmt_ctx->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_AUDIO) {
             audioindex = i;
-            out_stream = avformat_new_stream(ofmt_ctx_audio, in_stream->codec->codec);
+            inCodec = avcodec_find_decoder(in_stream->codecpar->codec_id);
+            out_stream = avformat_new_stream(ofmt_ctx_audio, inCodec);
             ofmt_ctx = ofmt_ctx_audio;
         } else
             break;
@@ -153,13 +155,28 @@ Java_com_h_arrow_medialib_videoeditor_VideoEditor_extractAudio(JNIEnv *env, jobj
             return;
         }
         // 复制到输出流
-        if (avcodec_copy_context(out_stream->codec, in_stream->codec) < 0) {
+        AVCodecParameters *incodecpar = in_stream->codecpar;
+        AVCodecParameters *outcodecpar = out_stream->codecpar;
+
+        AVCodecContext *codec_ctx = avcodec_alloc_context3(inCodec);
+
+        if (avcodec_parameters_to_context(codec_ctx, in_stream->codecpar) < 0) {
+            __android_log_print(ANDROID_LOG_ERROR, LOG_TGA,
+                                "Failed to copy context from input to output stream codec context.");
             return;
         }
-        out_stream->codec->codec_tag = 0;
-
+        codec_ctx->codec_tag = 0;
         if (ofmt_ctx->oformat->flags & AVFMT_GLOBALHEADER)
-            out_stream->codec->flags |= CODEC_FLAG_GLOBAL_HEADER;
+            codec_ctx->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+
+        int ret = avcodec_parameters_from_context(out_stream->codecpar, codec_ctx);
+        if (ret < 0) {
+            __android_log_print(ANDROID_LOG_ERROR, LOG_TGA,
+                                "Failed to copy codec context to out_stream codecpar context .");
+            return;
+        }
+        __android_log_print(ANDROID_LOG_INFO, LOG_TGA,
+                            "编码名称======='%s'", inCodec->name);
     }
     __android_log_print(ANDROID_LOG_DEBUG, LOG_TGA, "\n==============Input Video=============\n");
     av_dump_format(ifmt_ctx, 0, in_filename, 0);
@@ -200,6 +217,7 @@ Java_com_h_arrow_medialib_videoeditor_VideoEditor_extractAudio(JNIEnv *env, jobj
                             "Error occurred when opening video output file\n");
         return;
     }
+
 
     // 分离某些封装格式（例如MP4/FLV/MKV等）中的H.264的时候，需要首先写入SPS和PPS，否则会导致分离出来的数据
     // 没有SPS、PPS而无法播放。使用ffmpeg中名称为“h264_mp4toannexb”的bitstream filter处理

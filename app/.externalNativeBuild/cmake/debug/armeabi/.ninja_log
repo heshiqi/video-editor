@@ -1,0 +1,4 @@
+# ninja log v5
+0	79	1564738541	build.ninja	b9f95d8103726f69
+0	207	1564738541	CMakeFiles/native-lib.dir/native-lib.cpp.o	c22e62164812193b
+207	291	1564738541	/Users/heshiqi/me/video-editor/app/build/intermediates/cmake/debug/obj/armeabi/libnative-lib.so	e1529dd974092aab
