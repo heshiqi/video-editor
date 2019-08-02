@@ -221,7 +221,7 @@ Java_com_h_arrow_medialib_videoeditor_VideoEditor_extractAudio(JNIEnv *env, jobj
 
     // 分离某些封装格式（例如MP4/FLV/MKV等）中的H.264的时候，需要首先写入SPS和PPS，否则会导致分离出来的数据
     // 没有SPS、PPS而无法播放。使用ffmpeg中名称为“h264_mp4toannexb”的bitstream filter处理
-    AVBitStreamFilterContext *h264bsfc = av_bitstream_filter_init("h264_mp4toannexb");
+//    AVBitStreamFilterContext *h264bsfc = av_bitstream_filter_init("h264_mp4toannexb");
     while (1) {
         AVFormatContext *ofmt_ctx;
         AVStream *in_stream, *out_stream;
@@ -238,8 +238,8 @@ Java_com_h_arrow_medialib_videoeditor_VideoEditor_extractAudio(JNIEnv *env, jobj
             ofmt_ctx = ofmt_ctx_video;
             __android_log_print(ANDROID_LOG_DEBUG, LOG_TGA,
                                 "Write Video Packet. size:%d\tpts:%lld\n", pkt.size, pkt.pts);
-            av_bitstream_filter_filter(h264bsfc, in_stream->codec, NULL, &pkt.data, &pkt.size,
-                                       pkt.data, pkt.size, 0);
+//            av_bitstream_filter_filter(h264bsfc, in_stream->codec, NULL, &pkt.data, &pkt.size,
+//                                       pkt.data, pkt.size, 0);
         } else if (pkt.stream_index == audioindex) {
             out_stream = ofmt_ctx_audio->streams[0];
             ofmt_ctx = ofmt_ctx_audio;
@@ -266,11 +266,11 @@ Java_com_h_arrow_medialib_videoeditor_VideoEditor_extractAudio(JNIEnv *env, jobj
         }
         __android_log_print(ANDROID_LOG_DEBUG, LOG_TGA, "Write %8d frames to output file\n",
                             frame_index);
-        av_free_packet(&pkt);
+        av_packet_unref(&pkt);
         frame_index++;
     }
 
-    av_bitstream_filter_close(h264bsfc);
+//    av_bitstream_filter_close(h264bsfc);
 
     // 写文件尾部
     av_write_trailer(ofmt_ctx_video);

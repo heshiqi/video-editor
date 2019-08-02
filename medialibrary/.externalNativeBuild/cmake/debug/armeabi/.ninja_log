@@ -29,3 +29,7 @@
 644	741	0	../../../../build/intermediates/cmake/debug/obj/armeabi/libplayer-lib.so	8879ffd9423863b3
 1	805	0	CMakeFiles/player-lib.dir/src/main/cpp/videoeditor/videoEditor.cpp.o	f6deb5b0f7178318
 805	956	0	../../../../build/intermediates/cmake/debug/obj/armeabi/libplayer-lib.so	8879ffd9423863b3
+20	1072	0	CMakeFiles/player-lib.dir/src/main/cpp/videoeditor/videoEditor.cpp.o	f6deb5b0f7178318
+1072	1296	0	../../../../build/intermediates/cmake/debug/obj/armeabi/libplayer-lib.so	8879ffd9423863b3
+1	668	0	CMakeFiles/player-lib.dir/src/main/cpp/videoeditor/videoEditor.cpp.o	f6deb5b0f7178318
+668	799	0	../../../../build/intermediates/cmake/debug/obj/armeabi/libplayer-lib.so	8879ffd9423863b3
