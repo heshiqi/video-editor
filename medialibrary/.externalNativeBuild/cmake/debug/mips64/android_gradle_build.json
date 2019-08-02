@@ -1,0 +1,93 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"/Users/heshiqi/Library/Android/sdk/cmake/3.6.3155560/bin/cmake --build /Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/.externalNativeBuild/cmake/debug/mips64 --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"avcodec-57_lib-Debug-mips64" : 
+		{
+			"abi" : "mips64",
+			"artifactName" : "avcodec-57_lib",
+			"buildType" : "debug",
+			"output" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/src/main/jniLibs/mips64/libavcodec-57.so",
+			"toolchain" : "7527782888600080290"
+		},
+		"avformat-57_lib-Debug-mips64" : 
+		{
+			"abi" : "mips64",
+			"artifactName" : "avformat-57_lib",
+			"buildType" : "debug",
+			"output" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/src/main/jniLibs/mips64/libavformat-57.so",
+			"toolchain" : "7527782888600080290"
+		},
+		"avutil-55_lib-Debug-mips64" : 
+		{
+			"abi" : "mips64",
+			"artifactName" : "avutil-55_lib",
+			"buildType" : "debug",
+			"output" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/src/main/jniLibs/mips64/libavutil-55.so",
+			"toolchain" : "7527782888600080290"
+		},
+		"player-lib-Debug-mips64" : 
+		{
+			"abi" : "mips64",
+			"artifactName" : "player-lib",
+			"buildCommand" : "/Users/heshiqi/Library/Android/sdk/cmake/3.6.3155560/bin/cmake --build /Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/.externalNativeBuild/cmake/debug/mips64 --target player-lib",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain /Users/heshiqi/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/heshiqi/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64  -Dplayer_lib_EXPORTS -I../../../../src/main/cpp/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/mips64/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/src/main/cpp/easyplayer-lib.cpp",
+					"workingDirectory" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain /Users/heshiqi/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/heshiqi/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64  -Dplayer_lib_EXPORTS -I../../../../src/main/cpp/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/mips64/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/src/main/cpp/opensles.cpp",
+					"workingDirectory" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/.externalNativeBuild/cmake/debug/mips64"
+				},
+				
+				{
+					"flags" : "  -target mips64el-none-linux-android -gcc-toolchain /Users/heshiqi/Library/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/heshiqi/Library/Android/sdk/ndk-bundle/platforms/android-21/arch-mips64  -Dplayer_lib_EXPORTS -I../../../../src/main/cpp/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/mips64/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -std=c++11 -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/src/main/cpp/easyPlayer.cpp",
+					"workingDirectory" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/.externalNativeBuild/cmake/debug/mips64"
+				}
+			],
+			"output" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/build/intermediates/cmake/debug/obj/mips64/libplayer-lib.so",
+			"toolchain" : "7527782888600080290"
+		},
+		"swresample-2_lib-Debug-mips64" : 
+		{
+			"abi" : "mips64",
+			"artifactName" : "swresample-2_lib",
+			"buildType" : "debug",
+			"output" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/src/main/jniLibs/mips64/libswresample-2.so",
+			"toolchain" : "7527782888600080290"
+		},
+		"swscale-4_lib-Debug-mips64" : 
+		{
+			"abi" : "mips64",
+			"artifactName" : "swscale-4_lib",
+			"buildType" : "debug",
+			"output" : "/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/src/main/jniLibs/mips64/libswscale-4.so",
+			"toolchain" : "7527782888600080290"
+		}
+	},
+	"toolchains" : 
+	{
+		"7527782888600080290" : 
+		{
+			"cCompilerExecutable" : "/Users/heshiqi/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/heshiqi/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}

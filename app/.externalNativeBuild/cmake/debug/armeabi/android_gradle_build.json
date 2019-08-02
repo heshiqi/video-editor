@@ -1,0 +1,40 @@
+{
+  "stringTable": {
+    "0": "/Users/heshiqi/me/video-editor/app/.externalNativeBuild/cmake/debug/armeabi",
+    "1": "-target armv5te-none-linux-androideabi -gcc-toolchain /Users/heshiqi/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/heshiqi/Library/Android/sdk/ndk-bundle/platforms/android-16/arch-arm -Dnative_lib_EXPORTS -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "/Users/heshiqi/me/video-editor/app/src/main/cpp/CMakeLists.txt",
+    "/Users/heshiqi/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/heshiqi/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/heshiqi/me/video-editor/app/.externalNativeBuild/cmake/debug/armeabi\" --target clean"
+  ],
+  "libraries": {
+    "native-lib-Debug-armeabi": {
+      "buildCommand": "/Users/heshiqi/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/heshiqi/me/video-editor/app/.externalNativeBuild/cmake/debug/armeabi\" --target native-lib",
+      "buildType": "debug",
+      "toolchain": "2019342052",
+      "abi": "armeabi",
+      "artifactName": "native-lib",
+      "files": [
+        {
+          "src": "/Users/heshiqi/me/video-editor/app/src/main/cpp/native-lib.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/Users/heshiqi/me/video-editor/app/build/intermediates/cmake/debug/obj/armeabi/libnative-lib.so"
+    }
+  },
+  "toolchains": {
+    "2019342052": {
+      "cppCompilerExecutable": "/Users/heshiqi/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

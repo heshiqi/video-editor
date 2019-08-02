@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/heshiqi/study/videoeditor/app/.externalNativeBuild/cmake/debug/mips",
+  "command": "/Users/heshiqi/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ -target mipsel-none-linux-android -gcc-toolchain /Users/heshiqi/Library/Android/sdk/ndk-bundle/toolchains/mipsel-linux-android-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/heshiqi/Library/Android/sdk/ndk-bundle/platforms/android-16/arch-mips  -Dnative_lib_EXPORTS -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/mips/include -isystem /Users/heshiqi/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/native-lib.dir/native-lib.cpp.o -c /Users/heshiqi/study/videoeditor/app/src/main/cpp/native-lib.cpp",
+  "file": "/Users/heshiqi/study/videoeditor/app/src/main/cpp/native-lib.cpp"
+}
+]

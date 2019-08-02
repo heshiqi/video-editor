@@ -1,0 +1,17 @@
+{
+  "buildFiles": [
+    "/Users/heshiqi/study/videoeditor/app/src/main/cpp/CMakeLists.txt",
+    "/Users/heshiqi/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/heshiqi/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/heshiqi/study/videoeditor/app/.externalNativeBuild/cmake/debug/x86_64\" --target clean"
+  ],
+  "libraries": {
+    "native-lib-Debug-x86_64": {
+      "artifactName": "native-lib",
+      "buildCommand": "/Users/heshiqi/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build \"/Users/heshiqi/study/videoeditor/app/.externalNativeBuild/cmake/debug/x86_64\" --target native-lib",
+      "abi": "x86_64",
+      "output": "/Users/heshiqi/study/videoeditor/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so"
+    }
+  }
+}

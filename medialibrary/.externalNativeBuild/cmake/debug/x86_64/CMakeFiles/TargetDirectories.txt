@@ -1,0 +1,3 @@
+/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/edit_cache.dir
+/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/rebuild_cache.dir
+/Users/heshiqi/Downloads/FFmpeg-Video-Editor-Android-master/playerlib/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/player-lib.dir

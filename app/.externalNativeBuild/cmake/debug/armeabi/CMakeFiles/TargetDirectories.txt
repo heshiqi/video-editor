@@ -1,0 +1,3 @@
+/Users/heshiqi/me/video-editor/app/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/rebuild_cache.dir
+/Users/heshiqi/me/video-editor/app/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/edit_cache.dir
+/Users/heshiqi/me/video-editor/app/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/native-lib.dir
