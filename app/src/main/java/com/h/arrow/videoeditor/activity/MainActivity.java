@@ -1,8 +1,5 @@
 package com.h.arrow.videoeditor.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -21,8 +18,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-import com.h.arrow.medialib.videoeditor.VideoEditor;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import com.google.android.material.snackbar.Snackbar;
+import com.h.arrow.medialib.videoeditor.VideoEditor;
 import com.h.arrow.videoeditor.R;
 import com.h.arrow.videoeditor.utils.ThreadPool;
 import com.h.arrow.videoeditor.utils.Utils;
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout mainlayout;
     private String filePath;
     private int duration;
+    private int choice;
 
 
     @Override
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final TextView uploadVideo = findViewById(R.id.uploadVideo);
         Button extractAv = findViewById(R.id.extractAV);
+        Button mergeAv = findViewById(R.id.mergeAV);
         tvLeft = findViewById(R.id.tvLeft);
         tvRight = findViewById(R.id.tvRight);
         videoView = findViewById(R.id.videoView);
@@ -79,12 +81,39 @@ public class MainActivity extends AppCompatActivity {
         extractAv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                choice = 1;
                 if (selectedVideoUri != null) {
                     if (Build.VERSION.SDK_INT >= 23)
                         getAudioPermission();
                     else
                         extractAudioVideo();
+                } else
+                    Snackbar.make(mainlayout, "Please upload a video", 4000).show();
+            }
+        });
+
+        mergeAv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                choice = 2;
+                if (selectedVideoUri != null) {
+                    if (Build.VERSION.SDK_INT >= 23)
+                        getAudioPermission();
+                    else
+                        mergeAudioVideo();
+                } else
+                    Snackbar.make(mainlayout, "Please upload a video", 4000).show();
+            }
+        });
+        findViewById(R.id.cut_video).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                choice = 3;
+                if (selectedVideoUri != null) {
+                    if (Build.VERSION.SDK_INT >= 23)
+                        getAudioPermission();
+                    else
+                        cutVideo();
                 } else
                     Snackbar.make(mainlayout, "Please upload a video", 4000).show();
             }
@@ -138,8 +167,21 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(MainActivity.this,
                     params,
                     200);
-        } else
-            extractAudioVideo();
+        } else {
+            switch (choice) {
+                case 1:
+                    extractAudioVideo();
+                    break;
+                case 2:
+                    mergeAudioVideo();
+                    break;
+                case 3:
+                    cutVideo();
+                    break;
+            }
+
+        }
+
     }
 
     /**
@@ -279,9 +321,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * Command for extracting audio from video
-     */
     private void extractAudioVideo() {
         File moviesDir = Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_MUSIC
@@ -293,6 +332,11 @@ public class MainActivity extends AppCompatActivity {
         File dest = new File(moviesDir, filePrefix + fileExtn);
         filePath = dest.getAbsolutePath();
         final String videoPath = filePath.replace("aac", "mp4");
+
+
+        final File desc = new File(moviesDir, "merge.mp4");
+
+
         ThreadPool.getInstance().execute(new Runnable() {
             @Override
             public void run() {
@@ -302,12 +346,56 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void mergeAudioVideo() {
+        File moviesDir = Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_MUSIC
+        );
 
-    public static String[] combine(String[] arg1, String[] arg2, String[] arg3) {
-        String[] result = new String[arg1.length + arg2.length + arg3.length];
-        System.arraycopy(arg1, 0, result, 0, arg1.length);
-        System.arraycopy(arg2, 0, result, arg1.length, arg2.length);
-        System.arraycopy(arg3, 0, result, arg1.length + arg2.length, arg3.length);
-        return result;
+        String filePrefix = "extract_audio";
+        String fileExtn = ".aac";
+
+        File source = new File(moviesDir, filePrefix + fileExtn);
+        filePath = source.getAbsolutePath();
+
+        final String videoPath = filePath.replace("aac", "mp4");
+        File desc = new File(moviesDir, "merge2.mp4");
+        final String outPath = desc.getAbsolutePath();
+        final String yourRealPath = Utils.getPath(MainActivity.this, selectedVideoUri);
+
+        String filePrefix2 = "extract_audio2";
+        String fileExtn2 = ".aac";
+        File dest = new File(moviesDir, filePrefix2 + fileExtn2);
+        final String filePath2 = dest.getAbsolutePath();
+
+        ThreadPool.getInstance().execute(new Runnable() {
+            @Override
+            public void run() {
+                new VideoEditor().mergeVideoAudio(videoPath, filePath, outPath);
+//                new VideoEditor().testAcc(filePath,filePath2);
+            }
+        });
+
     }
+
+    private void cutVideo() {
+        File moviesDir = Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_MUSIC
+        );
+
+        String filePrefix = "video_cut";
+        String fileExtn = ".mp4";
+
+        File source = new File(moviesDir, filePrefix + fileExtn);
+        filePath = source.getAbsolutePath();
+        final String yourRealPath = Utils.getPath(MainActivity.this, selectedVideoUri);
+        ThreadPool.getInstance().execute(new Runnable() {
+            @Override
+            public void run() {
+                new VideoEditor().videoCut(yourRealPath, filePath, 0, 30);
+//                new VideoEditor().testAcc(filePath,filePath2);
+            }
+        });
+
+    }
+
 }

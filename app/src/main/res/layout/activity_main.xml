@@ -48,22 +48,23 @@
             android:layout_alignEnd="@+id/rangeSeekBar"
             android:layout_alignRight="@+id/rangeSeekBar"
             android:textColor="#000000" />
+
         <TextView
             android:id="@+id/tvLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/rangeSeekBar"
-            android:layout_alignStart="@+id/rangeSeekBar"
             android:layout_below="@+id/rangeSeekBar"
+            android:layout_alignStart="@+id/rangeSeekBar"
+            android:layout_alignLeft="@+id/rangeSeekBar"
             android:textColor="#000000" />
 
         <TextView
             android:id="@+id/tvRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/rangeSeekBar"
             android:layout_alignEnd="@+id/rangeSeekBar"
             android:layout_alignRight="@+id/rangeSeekBar"
-            android:layout_below="@+id/rangeSeekBar"
             android:textColor="#000000" />
 
         <TextView
@@ -99,4 +100,17 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="音视频分离" />
+
+    <Button
+        android:id="@+id/mergeAV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="合并音视频" />
+    <Button
+        android:id="@+id/cut_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="裁剪视频" />
 </LinearLayout>

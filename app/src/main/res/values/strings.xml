@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">video-editor</string>
 
-    <string name="rangeSeekBarText">Use RangeSeekbar to select time range for cutting video or extracting images from video(rangeseekbar ineffective for other options)</string>
+    <string name="rangeSeekBarText"></string>
     <string name="uploadVideo">选择视频</string>
 
 </resources>

@@ -18,6 +18,15 @@ JNIEXPORT void JNICALL
 Java_com_h_arrow_medialib_videoeditor_VideoEditor_extractAudio(JNIEnv *env, jobject instance,
                                                                jstring path_, jstring videoPath_,
                                                                jstring audioPath_);
+
+JNIEXPORT void JNICALL
+Java_com_h_arrow_medialib_videoeditor_VideoEditor_mergeVideoAudio(JNIEnv *env, jobject instance,
+                                                                  jstring videoPath_,
+                                                                  jstring audioPath_,
+                                                                  jstring outputPath_);
+JNIEXPORT void JNICALL
+Java_com_h_arrow_medialib_videoeditor_VideoEditor_testAcc(JNIEnv *env, jobject instance,
+                                                          jstring infile_, jstring outFile_);
 #ifdef __cplusplus
 }
 #endif
