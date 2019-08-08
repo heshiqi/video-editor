@@ -52,9 +52,11 @@ set_target_properties(x264 PROPERTIES IMPORTED_LOCATION
 # 构建本地动态库
 add_library(player-lib SHARED
         ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/videoEditor.cpp
-        ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/aac.c
-        ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/test.c
+#        ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/aac.c
         ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/video_cut.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/ffmpeg_utils.c
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/video2image.c
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/factory/entity_factory.c
         )
 
 # 从系统库中查找依赖库

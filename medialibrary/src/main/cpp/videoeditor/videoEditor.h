@@ -27,6 +27,11 @@ Java_com_h_arrow_medialib_videoeditor_VideoEditor_mergeVideoAudio(JNIEnv *env, j
 JNIEXPORT void JNICALL
 Java_com_h_arrow_medialib_videoeditor_VideoEditor_testAcc(JNIEnv *env, jobject instance,
                                                           jstring infile_, jstring outFile_);
+
+JNIEXPORT void JNICALL
+Java_com_h_arrow_medialib_videoeditor_VideoEditor_video2Images(JNIEnv *env, jobject instance,
+                                                               jstring inFilePath_,
+                                                               jstring outFilePath_);
 #ifdef __cplusplus
 }
 #endif

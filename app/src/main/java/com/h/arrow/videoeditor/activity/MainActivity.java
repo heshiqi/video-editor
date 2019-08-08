@@ -119,6 +119,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.video2images).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                choice = 4;
+                if (selectedVideoUri != null) {
+                    if (Build.VERSION.SDK_INT >= 23)
+                        getAudioPermission();
+                    else
+                        video2images();
+                } else
+                    Snackbar.make(mainlayout, "Please upload a video", 4000).show();
+            }
+        });
+
     }
 
     private void getPermission() {
@@ -177,6 +191,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 3:
                     cutVideo();
+                    break;
+                case 4:
+                    video2images();
                     break;
             }
 
@@ -391,8 +408,30 @@ public class MainActivity extends AppCompatActivity {
         ThreadPool.getInstance().execute(new Runnable() {
             @Override
             public void run() {
-                new VideoEditor().videoCut(yourRealPath, filePath, 0, 30);
+                new VideoEditor().videoCut(yourRealPath, filePath, 10, 20);
 //                new VideoEditor().testAcc(filePath,filePath2);
+            }
+        });
+
+    }
+
+    private void video2images() {
+        File moviesDir = Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_MUSIC
+        );
+
+        String filePrefix = "video2images";
+
+        File des = new File(moviesDir, filePrefix);
+        if (!des.exists()) {
+            des.mkdirs();
+        }
+        filePath = des.getAbsolutePath();
+        final String yourRealPath = Utils.getPath(MainActivity.this, selectedVideoUri);
+        ThreadPool.getInstance().execute(new Runnable() {
+            @Override
+            public void run() {
+                new VideoEditor().video2Images(yourRealPath, filePath);
             }
         });
 

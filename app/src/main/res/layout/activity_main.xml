@@ -94,23 +94,42 @@
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/extractAV"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="音视频分离" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/mergeAV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="合并音视频" />
-    <Button
-        android:id="@+id/cut_video"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="裁剪视频" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/extractAV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="音视频分离" />
+
+            <Button
+                android:id="@+id/mergeAV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="合并音视频" />
+
+            <Button
+                android:id="@+id/cut_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="裁剪视频" />
+            <Button
+                android:id="@+id/video2images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="视频转图片" />
+        </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>
