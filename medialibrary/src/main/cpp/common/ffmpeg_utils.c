@@ -24,6 +24,26 @@ int open_input_file(const char *filename, AVFormatContext **input_format_context
     return 0;
 }
 
+int find_stream_index(AVFormatContext *input_format_context, int *video_index, int *audio_index) {
+    int v_index = -1, a_index = -1;
+    for (int i = 0; i < input_format_context->nb_streams; ++i) {
+        if (input_format_context->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_VIDEO) {
+            v_index = i;
+        } else if (input_format_context->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_AUDIO) {
+            a_index = i;
+        } else {
+            break;
+        }
+    }
+    if (v_index == -1 || a_index == -1) {
+        LOGE("找不到视频视频流或者音频流------v_index= %d a_index= %d ", v_index, a_index);
+        return AVERROR_EXIT;
+    }
+    *video_index = v_index;
+    *audio_index = a_index;
+    return 0;
+}
+
 int
 init_input_codec(AVFormatContext **input_format_context, AVCodecContext **codec_context,
                  int *stream_index, enum AVMediaType type) {
@@ -112,7 +132,8 @@ int open_output_file(const char *filename, AVFormatContext **output_format_conte
     return error < 0 ? error : AVERROR_EXIT;
 }
 
-int open_output_file_with_oformat(const char *filename,AVFormatContext **output_format_context, char *oformat){
+int open_output_file_with_oformat(const char *filename, AVFormatContext **output_format_context,
+                                  char *oformat) {
     int error;
     AVIOContext *output_io_context = NULL;
     /* 打开输出文件 */
@@ -231,7 +252,8 @@ int init_output_codec(AVCodecContext *input_codec_context, AVFormatContext **out
     return error < 0 ? error : AVERROR_EXIT;
 }
 
-int copy_output_codec(AVCodecContext *input_codec_context,AVFormatContext **input_format_context, AVFormatContext **output_format_context,
+int copy_output_codec(AVCodecContext *input_codec_context, AVFormatContext **input_format_context,
+                      AVFormatContext **output_format_context,
                       AVCodecContext **codec_context, int stream_index) {
     int error;
 
@@ -316,10 +338,10 @@ int write_output_file_header(AVFormatContext *output_format_context) {
     return 0;
 }
 
-int write_output_file_trailer(AVFormatContext *output_format_context){
+int write_output_file_trailer(AVFormatContext *output_format_context) {
     int error;
     if ((error = av_write_trailer(output_format_context)) < 0) {
-        LOGE("不能写输出文件尾部数据 (error '%s')\n",av_err2str(error));
+        LOGE("不能写输出文件尾部数据 (error '%s')\n", av_err2str(error));
         return error;
     }
     return 0;

@@ -10,8 +10,8 @@
 #include <libavcodec/avcodec.h>
 #include <libswscale/swscale.h>
 
-#include "android_log.h"
-#include "ffmpeg_utils.h"
+#include "../android_log.h"
+#include "common/ffmpeg_utils.h"
 #include "../factory/entity_factory.h"
 
 void on_av_codec_context(AVFormatContext *formatContext, AVStream *stream, AVFrame *pFrame) {

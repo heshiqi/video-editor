@@ -21,6 +21,8 @@
  */
 int open_input_file(const char *filename,AVFormatContext **input_format_context);
 
+int find_stream_index(AVFormatContext *input_format_context,int *video_index,int *audio_index);
+
 int init_input_codec(AVFormatContext **input_format_context,AVCodecContext **codec_context,int *stream_index,enum AVMediaType type);
 
 int open_output_file(const char *filename,AVFormatContext **output_format_context);

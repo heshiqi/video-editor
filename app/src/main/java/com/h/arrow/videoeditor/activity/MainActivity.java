@@ -132,6 +132,51 @@ public class MainActivity extends AppCompatActivity {
                     Snackbar.make(mainlayout, "Please upload a video", 4000).show();
             }
         });
+        findViewById(R.id.play_video).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                choice = 5;
+                if (selectedVideoUri != null) {
+                    if (Build.VERSION.SDK_INT >= 23)
+                        getAudioPermission();
+                    else
+                        startVideoActivity();
+                } else
+                    Snackbar.make(mainlayout, "Please upload a video", 4000).show();
+            }
+        });
+        findViewById(R.id.play_video2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                choice = 6;
+                if (selectedVideoUri != null) {
+                    if (Build.VERSION.SDK_INT >= 23)
+                        getAudioPermission();
+                    else
+                        startVideoActivity2();
+                } else
+                    Snackbar.make(mainlayout, "Please upload a video", 4000).show();
+            }
+        });
+
+    }
+
+    private void startVideoActivity() {
+//        String url = "https://www.w3school.com.cn/i/movie.mp4";
+        String url = "/storage/emulated/0/Movies/hello.mp4";
+        Bundle bundle = new Bundle();
+        bundle.putString("url", url);
+//        VideoLiveActivity.startActivity(this, VideoLiveActivity.class, bundle);
+
+    }
+
+
+    private void startVideoActivity2() {
+//        String url = "https://www.w3school.com.cn/i/movie.mp4";
+        String url = "/storage/emulated/0/Movies/hello.mp4";
+        Bundle bundle = new Bundle();
+        bundle.putString("url", url);
+        VideoPlayActivity.startActivity(this, VideoPlayActivity.class, bundle);
 
     }
 
@@ -194,6 +239,12 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 4:
                     video2images();
+                    break;
+                case 5:
+                    startVideoActivity();
+                    break;
+                case 6:
+                    startVideoActivity2();
                     break;
             }
 

@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 #设置第三方动态库的头文件路径
+set(lib_include_DIR ${CMAKE_SOURCE_DIR}/src/main/cpp)
 set(lib_include_DIR ${CMAKE_SOURCE_DIR}/src/main/cpp/include)
 
 #设置第三方动态库的路径
@@ -54,9 +55,21 @@ add_library(player-lib SHARED
         ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/videoEditor.cpp
 #        ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/aac.c
         ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/video_cut.cpp
-        ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/ffmpeg_utils.c
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/common/ffmpeg_utils.c
         ${CMAKE_SOURCE_DIR}/src/main/cpp/videoeditor/video2image.c
         ${CMAKE_SOURCE_DIR}/src/main/cpp/factory/entity_factory.c
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/mediaplayer/h_media_player.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/mediaplayer/h_java_call.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/mediaplayer/h_ffmpeg.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/mediaplayer/h_base_player.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/mediaplayer/h_queue.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/mediaplayer/h_play_status.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/mediaplayer/h_audio.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/mediaplayer/h_video.cpp
+
+
+
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/player/android/h_native_media_player.cpp
         )
 
 # 从系统库中查找依赖库

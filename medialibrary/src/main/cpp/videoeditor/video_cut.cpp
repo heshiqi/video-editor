@@ -2,7 +2,7 @@
 // Created by heshiqi on 2019-08-04.
 //
 #include "video_cut.h"
-#include "android_log.h"
+#include "../android_log.h"
 
 extern "C" {
 #include <libavutil/time.h>

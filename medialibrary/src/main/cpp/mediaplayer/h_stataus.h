@@ -1,0 +1,15 @@
+//
+// Created by 何士奇 on 2019-08-08.
+//
+
+#ifndef VIDEO_EDITOR_STATUS_H
+#define VIDEO_EDITOR_STATUS_H
+
+#define WL_THREAD_MAIN 1
+#define WL_THREAD_CHILD 2
+
+#define WL_FFMPEG_CAN_NOT_OPEN_URL 3
+#define WL_FFMPEG_CAN_NOT_FIND_STREAMS 4
+#define WL_FFMPEG_CAN_NOT_OPEN_URL 5
+
+#endif //VIDEO_EDITOR_STATUS_H

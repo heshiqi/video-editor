@@ -2,7 +2,7 @@
 // Created by 何士奇 on 2019-08-07.
 //
 #include "entity_factory.h"
-#include "../videoeditor/android_log.h"
+#include "android_log.h"
 
 int init_av_codec_context_with_type(AVFormatContext *format_context, AVCodecContext **codec_context,AVCodec **codec,
                                     AVFrame *frame,
