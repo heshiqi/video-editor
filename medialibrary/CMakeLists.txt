@@ -70,6 +70,7 @@ add_library(player-lib SHARED
 
 
         ${CMAKE_SOURCE_DIR}/src/main/cpp/player/android/h_native_media_player.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/player/source/player/MediaPlayer.cpp
         )
 
 # 从系统库中查找依赖库
