@@ -11,7 +11,7 @@
 
 
 extern "C" {
-#include "common/ffmpeg_utils.h"
+#include "ffmpeg_utils.h"
 #include "video2image.h"
 
 #include <libavcodec/avcodec.h>
@@ -24,7 +24,7 @@ extern "C" {
 #include <libavcodec/avfft.h>
 }
 
-#include "../android_log.h"
+#include "android_log.h"
 
 //const char *LOG_TAG = "hh";
 //#define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)

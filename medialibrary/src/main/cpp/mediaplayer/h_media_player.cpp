@@ -3,7 +3,7 @@
 //
 #include <jni.h>
 #include "h_java_call.h"
-#include "../android_log.h"
+#include "android_log.h"
 #include "h_ffmpeg.h"
 #include "h_stataus.h"
 
@@ -111,14 +111,14 @@ Java_com_h_arrow_medialib_mediaplayer_HMediaPlayer_nativeGetVideoHeidht(JNIEnv *
 }
 }
 
-//extern "C"
-//JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
-//    jint result = -1;
-//    javaVM = vm;
-//    JNIEnv *env;
-//    if (vm->GetEnv((void **) &env, JNI_VERSION_1_4) != JNI_OK) {
-//        return -1;
-//    }
-//    return JNI_VERSION_1_4;
-//}
+extern "C"
+JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
+    jint result = -1;
+    javaVM = vm;
+    JNIEnv *env;
+    if (vm->GetEnv((void **) &env, JNI_VERSION_1_4) != JNI_OK) {
+        return -1;
+    }
+    return JNI_VERSION_1_4;
+}
 

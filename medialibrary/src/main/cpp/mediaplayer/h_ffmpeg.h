@@ -5,7 +5,7 @@
 #ifndef VIDEO_EDITOR_H_FFMPEG_H
 #define VIDEO_EDITOR_H_FFMPEG_H
 
-#include "../android_log.h"
+#include "android_log.h"
 #include "pthread.h"
 #include "h_base_player.h"
 #include "h_java_call.h"

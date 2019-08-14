@@ -3,7 +3,7 @@
 //
 
 #include "h_queue.h"
-#include "../android_log.h"
+#include "android_log.h"
 
 HQueue::HQueue(HPlayStatus *playStatus) {
     hPlayStatus = playStatus;

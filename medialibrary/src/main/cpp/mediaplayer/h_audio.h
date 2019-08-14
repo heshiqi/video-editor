@@ -10,7 +10,7 @@
 #include "h_queue.h"
 #include "h_java_call.h"
 #include "h_stataus.h"
-#include "../android_log.h"
+#include "android_log.h"
 extern "C"{
 #include <libswresample/swresample.h>
 #include <libavutil/time.h>

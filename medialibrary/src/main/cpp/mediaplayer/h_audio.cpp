@@ -1,7 +1,7 @@
 //
 // Created by 何士奇 on 2019-08-08.
 //
-#include "../android_log.h"
+#include "android_log.h"
 #include "h_audio.h"
 
 

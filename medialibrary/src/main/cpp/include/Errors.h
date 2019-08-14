@@ -1,9 +1,9 @@
 //
-// Created by 何士奇 on 2019-08-12.
+// Created by cain on 2019/2/2.
 //
 
-#ifndef VIDEO_EDITOR_ERRORS_H
-#define VIDEO_EDITOR_ERRORS_H
+#ifndef ERRORS_H
+#define ERRORS_H
 
 #include <sys/types.h>
 #include <cerrno>
@@ -11,7 +11,7 @@
 #ifdef HAVE_MS_C_RUNTIME
 typedef int         status_t;
 #else
-typedef int32_t status_t;
+typedef int32_t     status_t;
 #endif
 
 #ifdef _WIN32
@@ -54,4 +54,4 @@ enum {
 # define NO_ERROR 0L
 #endif
 
-#endif //VIDEO_EDITOR_ERRORS_H
+#endif //ERRORS_H

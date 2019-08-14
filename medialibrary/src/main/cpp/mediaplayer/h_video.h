@@ -8,7 +8,7 @@
 #include "h_base_player.h"
 #include "h_queue.h"
 #include "h_java_call.h"
-#include "../android_log.h"
+#include "android_log.h"
 #include "h_audio.h"
 
 extern "C"

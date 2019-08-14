@@ -3,7 +3,7 @@
 //
 
 #include "h_play_status.h"
-#include "../android_log.h"
+#include "android_log.h"
 
 HPlayStatus::HPlayStatus() {
     exit = false;

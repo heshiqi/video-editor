@@ -2,7 +2,7 @@
 // Created by 何士奇 on 2019-08-08.
 //
 #include "h_java_call.h"
-#include "../android_log.h"
+#include "android_log.h"
 #include "h_stataus.h"
 
 JavaCall::JavaCall(_JavaVM *javaVM, JNIEnv *env, jobject *jobj) {
