@@ -6,7 +6,7 @@
 #include "h_stataus.h"
 
 extern "C" {
-#include "../common/ffmpeg_utils.h"
+#include "ffmpeg_utils.h"
 }
 
 void *decodeThread(void *data) {

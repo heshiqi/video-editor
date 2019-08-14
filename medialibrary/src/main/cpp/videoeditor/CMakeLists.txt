@@ -10,14 +10,14 @@ add_library(player-lib SHARED
         ../common/ffmpeg_utils.c
         video2image.c
         ../factory/entity_factory.c
-        ../mediaplayer/h_media_player.cpp
-        ../mediaplayer/h_java_call.cpp
-        ../mediaplayer/h_ffmpeg.cpp
-        ../mediaplayer/h_base_player.cpp
-        ../mediaplayer/h_queue.cpp
-        ../mediaplayer/h_play_status.cpp
-        ../mediaplayer/h_audio.cpp
-        ../mediaplayer/h_video.cpp
+        ../testplayer/h_media_player.cpp
+        ../testplayer/h_java_call.cpp
+        ../testplayer/h_ffmpeg.cpp
+        ../testplayer/h_base_player.cpp
+        ../testplayer/h_queue.cpp
+        ../testplayer/h_play_status.cpp
+        ../testplayer/h_audio.cpp
+        ../testplayer/h_video.cpp
         )
 
 # 从系统库中查找依赖库
